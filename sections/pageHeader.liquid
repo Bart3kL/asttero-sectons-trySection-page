@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="{{ 'pageHeader.css' | asset_url}}">
+
+<header class="pageHeader">
+  <div class="pageHeaderContainer">
+    <div class="pageHeaderContainerContent">
+   
+        <a href="{{ shop.url }}" class="pageHeaderContainerContentLogo">
+          <img
+            src="{{ 'logo.webp' | file_url }}"
+            width="24"
+            height="24"
+            alt="{{ shop.name }}">
+        </a>
+        <div class="pageHeaderContainerContentTitle">
+            <span>Free sections</span>
+        </div>
+
+        <ul class="pageHeaderContainerContentDesktopNav">
+            <li class="pageHeaderContainerContentDesktopNavItem"><a href="/sections">Sections</a></li>
+            <li  class="pageHeaderContainerContentDesktopNavItem"><a href="/premium">Premium</a></li>
+            <li  class="pageHeaderContainerContentDesktopNavItem"><a href="/contact">Kontakt</a></li>
+        </ul>
+
+        <div class="pageHeaderContainerContentSearchBar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-neutral-500"><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path><path d="M21 21l-6 -6"></path></svg>
+           <span>Search Sections</span>
+        </div>
+        <button id="pageHeader-menu-toggle" class="pageHeaderContainerContentMobileIcon">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-black dark:text-white h-6 w-6" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M432 176H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 272H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 368H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16z"></path></svg>
+        </button>
+      
+    </div>
+  </div>
+
+  <div id="pageHeader-mobile-menu" class="pageHeaderMobileMenu">
+    <div class="pageHeaderMobileMenuContent">
+        <a href="{{ shop.url }}" class="pageHeaderContainerContentLogo">
+            <img
+              src="{{ 'logo.webp' | file_url }}"
+              width="24"
+              height="24"
+              alt="{{ shop.name }}">
+          </a>
+      <button id="pageHeader-menu-close" class="pageHeaderMobileMenuContentBtn">&times;</button>
+   
+        <ul class="pageHeaderMobileMenuContentNav">
+          <li class="pageHeaderMobileMenuContentNavItem"><a href="/sections">Sections</a></li>
+          <li  class="pageHeaderMobileMenuContentNavItem"><a href="/premium">Premium</a></li>
+          <li  class="pageHeaderMobileMenuContentNavItem"><a href="/contact">Kontakt</a></li>
+        </ul>
+    
+    </div>
+  </div>
+</header>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.getElementById('pageHeader-menu-toggle');
+  const mobileMenu = document.getElementById('pageHeader-mobile-menu');
+  const menuClose = document.getElementById('pageHeader-menu-close');
+  
+  menuToggle.addEventListener('click', function() {
+    mobileMenu.style.display = 'block';
+  });
+  
+  menuClose.addEventListener('click', function() {
+    mobileMenu.style.display = 'none';
+  });
+  
+ 
+  window.addEventListener('click', function(e) {
+    if (e.target === mobileMenu) {
+      mobileMenu.style.display = 'none';
+    }
+  });
+  });
+</script>

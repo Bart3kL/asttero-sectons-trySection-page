@@ -1,0 +1,14 @@
+{
+	"type": "header",
+	"name": "Header Group",
+	"sections": {
+		"pageHeader": {
+			"type": "pageHeader",
+			"settings": {
+				"message_3_text": "",
+				"message_3_url": ""
+			}
+		}
+	},
+	"order": ["pageHeader"]
+}
